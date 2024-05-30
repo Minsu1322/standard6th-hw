@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-const List = memo(({ items }) => {
+const List = ({ items }) => {
   console.log("List component rendered");
   return (
     <ul>
@@ -9,6 +9,6 @@ const List = memo(({ items }) => {
       ))}
     </ul>
   );
-});
+};
 
 export default memo(List);

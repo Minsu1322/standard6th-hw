@@ -13,8 +13,8 @@ const App = () => {
     setInput(event.target.value);
   };
 
-  const addItem = useCallback(() => {
-    setItems((prevItems) => [...prevItems, input]);
+  const addItem = useCallback((currentInput) => {
+    setItems((prevItems) => [...prevItems, currentInput]);
   }, []);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const App = () => {
     <div>
       <h1>Item List</h1>
       <input type="text" value={input} onChange={handleInputChange} />
-      <button onClick={addItem}>Add Item</button>
+      <button onClick={() => addItem(input)}>Add Item</button>
       <List items={items} />
     </div>
   );
